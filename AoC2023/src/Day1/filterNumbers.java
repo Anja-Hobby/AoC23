@@ -1,9 +1,6 @@
 package Day1;
 
 import java.util.ArrayList;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 import Basic.AoCReader;
 import Basic.patternMatching;
 import Basic.stringEditor;
@@ -32,7 +29,6 @@ public class filterNumbers {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 	}
 
 
@@ -40,9 +36,8 @@ public class filterNumbers {
 		int firstDigit = 0;
 		int lastDigit = 0;
 
-
-		String firstString= pm.firstAppearance(str, "\\d");
-		String lastString= pm.lastAppearance(str, "\\d");
+		String firstString= patternMatching.firstAppearance(str, "\\d");
+		String lastString= patternMatching.lastAppearance(str, "\\d");
 
 		//System.out.println(str+ " resulted in : " + firstString + "  and " + lastString);
 		
@@ -65,12 +60,11 @@ public class filterNumbers {
 		int firstDigit = 0;
 		int lastDigit = 0;
 
-
-		String firstString= pm.firstAppearance(str, "\\d|one|two|three|four|five|six|seven|eight|nine|zero");
-		String lastString= pm.lastAppearance(str, "\\d|one|two|three|four|five|six|seven|eight|nine|zero");
+		String firstString= patternMatching.firstAppearance(str, "\\d|one|two|three|four|five|six|seven|eight|nine|zero");
+		String lastString= patternMatching.lastAppearance(str, "\\d|one|two|three|four|five|six|seven|eight|nine|zero");
 
 		if (firstString.length()>1) {
-			firstDigit = strEdit.stringToNum(firstString);
+			firstDigit = stringEditor.stringToNum(firstString);
 		} else if (firstString.length()==1) {
 			firstDigit = Integer.parseInt(firstString);
 		} else {
@@ -78,7 +72,7 @@ public class filterNumbers {
 		}
 
 		if (lastString.length()>1) {
-			lastDigit = strEdit.stringToNum(lastString);
+			lastDigit = stringEditor.stringToNum(lastString);
 		} else if (lastString.length()==1){
 			lastDigit = Integer.parseInt(lastString);
 		} else {
